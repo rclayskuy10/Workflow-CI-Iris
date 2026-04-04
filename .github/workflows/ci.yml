@@ -1,4 +1,4 @@
-name: CI - Train & Build Model
+name: CI - Train Model
 
 on:
   push:
@@ -35,25 +35,3 @@ jobs:
           name: mlflow-artifacts
           path: MLProject/mlruns/
           retention-days: 30
-
-  build-docker:
-    runs-on: ubuntu-latest
-    needs: train-model
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: ./MLProject
-          file: ./MLProject/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/iris-classification:latest
