@@ -1,4 +1,4 @@
-name: iris-classification
+name: covertype-classification
 
 conda_env: conda.yaml
 

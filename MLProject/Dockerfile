@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["mlflow", "models", "serve", "-m", "runs:/5e1956ef3a254880a264a965b801189c/model", "--host", "0.0.0.0", "--port", "5000", "--no-conda"]
+CMD ["mlflow", "models", "serve", "-m", "runs:/47fc0ee9002145a3b059f85a61eca2bf/model", "--host", "0.0.0.0", "--port", "5000", "--no-conda"]

@@ -1,4 +1,4 @@
-name: iris-classification-env
+name: covertype-classification-env
 channels:
   - defaults
   - conda-forge

@@ -1,5 +1,5 @@
 """
-Modelling untuk MLflow Project - Iris Classification
+Modelling untuk MLflow Project - Covertype Classification
 Nama: Riski Pratama
 File ini dijalankan melalui MLflow Project (mlflow run).
 """
@@ -24,8 +24,8 @@ def main():
 
     # Load data
     data_dir = os.path.dirname(os.path.abspath(__file__))
-    train_df = pd.read_csv(os.path.join(data_dir, 'iris_train_preprocessed.csv'))
-    test_df = pd.read_csv(os.path.join(data_dir, 'iris_test_preprocessed.csv'))
+    train_df = pd.read_csv(os.path.join(data_dir, 'covtype_train_preprocessed.csv'))
+    test_df = pd.read_csv(os.path.join(data_dir, 'covtype_test_preprocessed.csv'))
 
     feature_cols = [c for c in train_df.columns if c != 'target']
     X_train = train_df[feature_cols]
